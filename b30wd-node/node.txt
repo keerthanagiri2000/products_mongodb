@@ -1,0 +1,54 @@
+OS-info on CPU, memory, directories
+
+const os=require("os"); //inbuilt package
+console.log("free memory", os.freemmem());  //free RAM
+console.log("total memory", os.totalmem()); //total RAM
+console.log("Version", os.version());
+console.log("processor", os.cpus());
+
+fs-file system
+
+comment
+const fs=require("fs");
+
+fs.writeFile("names.txt", data, (err) => {   //names.txt ->file name, data->content, callback
+    cosole.log("Completed writing!!");
+});
+
+09/03/2022
+
+express.js?
+node.js framework
+
+usecases:
+  single-page, multiple and hybrid.
+
+need:
+  we can develop an application that can be used to handle varieties of request
+
+npm:node package manager
+install express?
+command: npm install express
+
+routing?
+how an application responds to our request.
+each route can have one or more handler
+
+syntax:
+app.METHOD(PATH, HANDLER)
+
+app->express object
+METHOD->http request METHODpath->ia s path on server
+HANDLER-> it is a function which is executed when a particular route is matched
+
+POST:
+syntax:app.post(path, callback)
+it routes the post request to specific path with specific call baxk function.
+
+path-> a path csn be anything,
+
+
+readfile:
+  err-> file name doesnt exists.
+
+npm init -y to install package.json
