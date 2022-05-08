@@ -1,0 +1,7 @@
+//# to create package.json
+ npm init -y
+ 
+//install express (it will show dependencies, node modules and package-lock.json)
+npm i express
+
+ 

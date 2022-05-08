@@ -1,0 +1,302 @@
+create node app command
+.......................
+ 1.npm init -y
+ 2.npm i express
+ 3.npm install --save-dev nodemon
+
+ Databases?
+    Special software to store data.
+
+ Where does databases live?
+   cloud
+ what is cloud?
+   it is a renting Pc
+Cloud providers?
+  aws,google cloud platform, microsoft azure, oracle cloud.
+
+if your buying?
+  1.many pc's-initial cost
+  2.you need a room (physical place)
+  3.ac
+  4.current bill
+  5.you need someone to maintain
+  6.HDD/RAM/processor-replace-customer data/seamless
+  7.backup-pc'
+  8.backup current(ups)
+
+if your renting?
+  1.disaster management
+  2.easy scaling
+
+why database?
+  1.database-frequently asked it will have it in the ram.
+  2.querying becomes easier.
+  3.CRUD-easy.
+  4.backups are inbuilt
+  5.undo-easily(time limit)
+  6.performance
+
+22/02/2022
+ vertical scaling
+  adds power to your existing machine infrastructure by increasing power from
+  CPU or RAM to existing machines.
+
+Horizontal scaling
+adds more machine resources to your existing machines infrastructure.
+  
+Auto scaling
+  colud computing that dynamically adjust the amount of computational resources in acserver farm - typically
+  measured by the number of active servers- automatically based on the load on
+  the farm.
+
+Database 2 types:
+ 1.SQL - structured query language(Relational database)
+    SQL
+    PISql
+    MySQL
+    Postgres
+    AWS RDBMS
+
+2.Non-relational databases(NoSQL)
+     MongoDB
+     Cassandra
+     CouchDB
+     Redis
+     Neo4j
+     AWS DynamoDB
+
+    sqlbolt:
+    distinct - remove duplicate rows.
+    order by - giving col in asecending /decending order
+    limit - (1st five popualted country details)
+    offset - skip 1st five populated country
+
+
+Normalization - removing repeated data/normalized data
+
+inner join - join the  2 table we can get the common items
+
+outer join 
+  1)left outer join -> common items of a and b + extra item of a(left side)
+  2)right outer join -> common items of a and b + some items of b (right side)
+  3)full outer join -> common items of a and b + some items of a and b(full )
+
+primary key
+ unique, not empty, only column can be primary key
+
+foreign key 
+  table join
+
+23/02/2022
+     video-stop(01:30:23 min)
+01/03/2022 
+ 
+ Types of schemas 
+   1.schema 1 -different key
+   {
+     "title": "book 1"
+     "price": 40
+   }
+   {
+     "name":"book 2"
+     "price": 650
+   }
+   2.schema 2- extra key
+   {
+     "title": "book 1"
+     "price": 40
+   }
+   {
+     "title": "book 2"
+     "price": 40,
+     "available":true
+   }
+   
+3.schema 3-normal consistant
+   {
+     "title": "book 1"
+     "price": 40
+   }
+   {
+     "title": "book 2"
+     "price": 40
+   }
+
+  mongodb-binary json
+  
+  CRUD operation
+
+  create - insertOne(data, options)
+           insertMany(data, options)
+  
+  Read - find(data, options)
+         findOne(data, options)
+
+  Update - updateOne(data, options)
+          updateMany(data, options)
+          replaceOne(data, options)
+
+  Delete - deleteOne(data, options)
+           deleteMany(data, options)
+
+2/04/2022
+
+rename the collection name - db.student.renameCollection("students")
+remove collection - db. collectionName. drop()
+
+Projections - inclusion
+  db.students.find({}, {users:1, codekata:1}).pretty()
+
+Projections - exclusion
+   db.students.find({}, {date:0, mentors:0}).pretty()
+ 
+exception
+   db.students.find({}, {_id:0, users:1, codekata:1}).pretty()
+
+sorting - asecending
+   db.students.find({}).sort({codekata:1});
+sorting - decending
+   db.students.find({}).sort({codekata:-1});
+
+first 2 highest rated movies
+   db.students.find({}).limit(2) - first and second only get
+skip first 2
+   db.students.find({}).skip(2)
+
+   fast-throws the book
+   slow-search where he kept it
+
+   slow-orders the books(takes time)
+   fast-pick it from library(mongodb)
+
+3/04/2022
+
+Aggregation
+(depends on problems)
+stage-1
+  filter all urgent orders
+stage-2
+  group by
+
+db.orders.aggregate([
+  {$match: {status: "urgent}}
+
+])
+
+07/03/2022(sql bolt(15th exercise) and working with mongodb, node js )
+
+storage engine-hard disk, RAM
+mongodb server - listen queries
+
+Node js 
+ its not a server
+
+ what is node js?
+  it is a environment to run
+
+JS environment -place to run js
+why niode js?
+why another environment?
+ browsers are restricted.
+  
+what browsers cannot do?
+  delete 
+  update
+  cannot access file system (like c drive, D drive)
+  cannot access hardware details
+  cannot delte files
+  cannot copy files
+
+love virus
+worm virus ->duplicate file size
+
+node js user
+ data streaming
+ server side proxy
+ big data and analytics
+ wireless connectivity
+ system monitoring dashboard
+ real time data
+ queued I/O inputs
+ chat bots
+ web scraping and automation
+ REST API
+
+JS single thread or multi thread?
+  single thread and asynchronous
+  1)synchronous ->do one work and complete then start another one.
+  2)asynchronous ->do multiple work at one time.
+
+how to work stack?
+ eg:plate washing
+ first in last out -FILO
+ last in first out- LIFO
+
+Queue
+  eg:ticket counter
+  first in first out - FIFO
+  last in last out - LILO
+
+Is setTimeout part of JS?
+  no.part of browser's codekata
+  webapis
+
+callback - latentflip
+  work of event loop?
+   push queue to stack, when stack is empty.
+
+first call stack , and timeout wait in the web apis,when call stack is empty
+the queue is push to stack . 
+
+  what are part of web apis?
+    setTimeout
+    setInterval
+    event listener 
+    promise
+    (all async operations are part of web apis)
+
+call stack - also called blocking operation
+
+node js bindings -> access file system
+
+8/03/2022
+node 
+  ->no DOM.
+  -> No document
+  -> No window
+
+inbuilt packages
+  export-module.exports
+  import-require
+
+   OS
+   => operating system
+   => information on CPU, memory, directories, etc
+   const OS=require("os"); //inbuilt packages
+   console.log("Free memory", os.freemem()); //free RAM 
+   console.log("Total memory", os.totalmem()); //total RAM
+   console.log("Version", os.version());
+   console.log("Processor", os.cpus());
+
+fs
+  => access file system(like c drive and d drive)
+  writefile
+  write file using loop 
+
+10/03/2022
+ readfile  
+   utf-8 => character encoding
+ addfile
+ delete file
+ readdir
+
+ web architecture 
+   react -> node express -> mongodb
+   mongodb -> node express -> react
+
+   express -> used to build a server
+
+
+  video 01:46:00
+
+
